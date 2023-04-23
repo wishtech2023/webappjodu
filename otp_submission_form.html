@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>OTP Code Verification Form</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        form {
+            background-color: #f2f2f2;
+            border-radius: 5px;
+            padding: 20px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 8px;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        /* OTP Sent Successfully Popup */
+        .otp-success-popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        .otp-success-message {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 24px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>OTP Code Verification</h1>
+        <form action="verify_otp.php" method="post">
+            <label for="otpCode">Enter the OTP code sent to your phone:</label>
+			<input type="hidden" name="mobile" id="mobile" value="<?php echo $_GET['mobile']; ?>">
+			<input type="hidden" name="otp" id="otp" value="<?php echo $_GET['otp']; ?>">
+            <input type="text" name="otpCode" pattern=".{5}"
+                     oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"  maxlength="5" placeholder="XXXXX" required>
+            <button type="submit">Verify OTP Code</button>
+        </form>
+		<script>
+        // Retrieve the values of mobile and otp from URL query parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const mobile = urlParams.get('mobile');
+        const otp = urlParams.get('otp');
+
+        // Set the values of mobile and otp as the default values of the hidden input fields
+        document.getElementById('mobile').value = mobile;
+        document.getElementById('otp').value = otp;
+    </script>
+		
+    </div>
+</body>
+</html>

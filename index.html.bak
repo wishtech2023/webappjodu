@@ -1,0 +1,226 @@
+<html>
+   <head>
+      <title>Wish Me guys !!!!!!!!!!!</title>
+      <style>
+         h2{
+         font-family: Sans-serif; 
+         font-size: 24px;     
+         font-style: normal; 
+         font-weight: bold; 
+         color: blue;
+         text-align: center; 
+         text-decoration: underline
+         }
+         table{
+         font-family: verdana; 
+         color:white; 
+         font-size: 16px; 
+         font-style: normal;
+         font-weight: bold;
+         background: linear-gradient(to bottom, #33ccff 0%, #ff99cc 100%);  
+         border-collapse: collapse; 
+         border: 4px solid #000000;
+         border-style: solid;
+         }
+         table.inner{
+         border: 10px
+         }
+         input[type=text], input[type=email], input[type=number]{
+         width: 50%;
+         padding: 6px 12px;
+         margin: 5px 0;
+         box-sizing: border-box;
+         }
+         input[type=submit], input[type=reset]{
+         width: 15%;
+         padding: 8px 12px;
+         margin: 5px 0;
+         box-sizing: border-box;
+         }
+      </style>
+   </head>
+   <body>
+      <h2>
+      Wish Me guys !!!!!!!!!!!</h3>
+      <table align="center" cellpadding = "10">
+         <form method="post" action="regstration_data_tetch_php.php">
+            <!--------------------- First Name ------------------------------------------>
+            <tr>
+               <td>Name</td>
+               <td><input type="text"   name="Name" maxlength="50" placeholder="Please Enter your good Name" required></td>
+            </tr>
+            <!------------------------ Last Name --------------------------------------->
+            <!-------------------------- Email ID ------------------------------------->
+            <tr>
+               <td>Email ID</td>
+               <td><input type="email" name="EmailID" maxlength="100" placeholder="Please enter your valid email for communication"/></td>
+            </tr>
+            <!-------------------------- Mobile Number ------------------------------------->
+            <tr>
+               <td>Mobile Number</td>
+               <td>
+                  <input type="text" name="MobileNumber" pattern=".{10}"
+                     oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" / placeholder="9440XXXXXXX"  maxlength="10" required>
+               </td>
+            </tr>
+            <!---------------------- Gender ------------------------------------->
+            <tr>
+               <td>Gender</td>
+               <td>
+                  <input type="radio" name="Gender" value="Male" />
+                  Male
+                  <input type="radio" name="Gender" value="Female" />
+                  Female
+               </td>
+            </tr>
+            <!--------------------------Blood Group----------------------------------->
+            <tr>
+               <td>Blood Group</td>
+               <td>
+                  <label for="BloodGroup" required></label>
+                  <select name="BloodGroupName" id="BloodGroupName"  required>
+                     <option value="" disabled selected hidden>Choose your Blood Group</option>
+                     <option value="A+">A+</option>
+                     <option value="A-">A-</option>
+                     <option value="B+">B+</option>
+                     <option value="B-">B-</option>
+                     <option value="AB+">AB+</option>
+                     <option value="AB-">AB-</option>
+                     <option value="O+">O+</option>
+                     <option value="O-">O-</option>
+                  </select>
+               </td>
+            </tr>
+            <!--------------------------Date Of Birth----------------------------------->
+            <td>Date of Birth</td>
+            <td>
+               <input type="date" id="birthday"  name="birthday" oninput="validateDate()" required>
+			   <script>
+					function validateDate() {
+					var selectedDate = new Date(document.getElementById("birthday").value);
+					var today = new Date();
+
+					if (selectedDate > today) {
+					  alert("Please select a date on or before today.");
+					  document.getElementById("birthday").value = "";
+
+					}
+				  }
+				</script>
+
+			   
+			   
+            </td>
+            <!------------------------- DROP-DOWNs-JODU ---------------------------------->
+            <tr>
+               <td>DETAILS</td>
+               <td>
+                  <label for="COUNTRY">COUNTRY:</label>
+                  <select name="CountryName" id="CountryName" required>>
+                     <option value="" disabled selected hidden>Choose your COUNTRY</option>
+                     <option value="INDIA">INDIA</option>
+                  </select>
+                  <label for="STATE">STATE:</label>
+                  <select name="stateName" id="stateName" required>>
+                     <option value="" disabled selected hidden>Choose your STATE</option>
+                     <option value="Andhra Pradesh">Andhra Pradesh</option>
+                     <option value="Telangana">Telangana</option>
+                     <option value="Karnataka">Karnataka</option>
+                  </select>
+                  <label for="District">District:</label>
+                  <select name="DistrictName" id="DistrictName" required>>
+                     <option value="" disabled selected hidden>Choose your District</option>
+                     <option value="Kadapa">Kadapa</option>
+                     <option value="Tirupathi">Tirupathi</option>
+                     <option value="Kurnool">Kurnool</option>
+                  </select>
+                  <label for="Taluk">Taluk:</label>
+                  <select name="TalukName" id="TalukName" required>>
+                     <option value="" disabled selected hidden>Choose your TALUK</option>
+                     <option value="Badvel">Badvel</option>
+                     <option value="Jammalamadugu">Jammalamadugu</option>
+                     <option value="Kadapa">Kadapa</option>
+                     <option value="Proddatur">Proddatur</option>
+                     <option value="Kamalapuram">Kamalapuram</option>
+                     <option value="Mydukur">Mydukur</option>
+                     <option value="Pulivendula">Pulivendula</option>
+                  </select>
+                  <label for="Mandal">Mandal:</label>
+                  <select name="MandalName" id="MandalName" required>>
+                     <option value="" disabled selected hidden>Choose your Mandal</option>
+                     <option value="ATLURU">ATLURU</option>
+                     <option value="B-KODURU">B-KODURU</option>
+                     <option value="BADVEL">BADVEL</option>
+                     <option value="B.MATAM">B.MATAM</option>
+                     <option value="CHAPADU">CHAPADU</option>
+                     <option value="DUVVURU">DUVVURU</option>
+                     <option value="GOPAVARAM">GOPAVARAM</option>
+                     <option value="KALASAPADU">KALASAPADU</option>
+                     <option value="KHAJIPET">KHAJIPET</option>
+                     <option value="MYDUKUR">MYDUKUR</option>
+                     <option value="PORUMAMILLA">PORUMAMILLA</option>
+                     <option value="KASINAYANA">KASINAYANA</option>
+                  </select>
+               </td>
+            </tr>
+            <td>Village Name</td>
+            <td>
+               <input type="text" id="villageName" name="villageName" placeholder='Please type your village for exiting news  !!!'  required>
+            </td>
+            </tr>
+            <!------------------------- Address ---------------------------------->
+            <tr>
+               <td>Address<br /><br /><br /></td>
+               <td><textarea name="Address" rows="5" cols="50" placeholder="Please enter your addess for surprise gift's delivery (Optional)"></textarea></td>
+            </tr>
+            <!------------------------- Hobbies -------------------------------------->
+            <tr>
+               <td>Hobbies<br /></td>
+               <td><input type="text" id="Hobbies" name="Hobbies" placeholder="Enter and choose your partner for your favourate sports surrounding you (Optional)"></textarea></td>
+            </tr>
+            <!-----------------------Qualification---------------------------------------->
+            <tr>
+               <td>Qualification</td>
+               <td>
+                  <label for="Education" required></label>
+                  <select name="EducationData" id="EducationData">>
+                     <option value="" disabled selected hidden>Select your Qualification</option>
+                     <option value="SSC">INDIA</option>
+                     <option value="PUC">+2 (PUC/Intermediate)</option>
+                     <option value="Degree">Degree</option>
+                     <option value="B.Tech">B.TECH</option>
+                     <option value="MBBS">MBBS</option>
+                     <option value="Masters">Masters/PG</option>
+                     <option value="CA">CA</option>
+                     <option value="Ph.D">PH.D</option>
+                     <option value="Aggriculture">Aggriculture</option>
+                     <option value="TTC">TTC</option>
+                     <option value="MBA">MBA</option>
+                     <option value="MCA">MCA</option>
+                  </select>
+               </td>
+            </tr>
+            <!----------------------- Goal Setting---------------------------------------->
+            <tr>
+               <td>Goal/Job/Future Study<br /></td>
+               <td><input type="text" id="Goal" name="GoalName" placeholder="Enter your ambition like EAMCET, JEE Aspirant, Govt Job IAS, IPS, MBBS or NEET, JEE Aspirants or Software Engineer (Optional)"></textarea></td>
+            </tr>
+            <!----------------------- Maitial Status---------------------------------------->
+            <tr>
+               <td>Are you married</td>
+               <td>
+                  <input type="radio" name="Married" value="NO" />
+                  Yes
+                  <input type="radio" name="Married" value="NO" />
+                  No
+               </td>
+            </tr>
+            <!----------------------- Submit and Reset ------------------------------->
+            <tr>
+               <td colspan="2" align="center">
+                  <input type="submit" value="Submit">
+               </td>
+            </tr>
+      </table>
+   </body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Development Stage</title>
+	<style>
+		body {
+			background-color: #000;
+			background-size: cover;
+			background-position: center center;
+			animation: background-motion 5s ease infinite;
+		}
+		.container {
+			text-align: center;
+			margin-top: 150px;
+			color: #fff;
+			font-size: 24px;
+		}
+		@keyframes background-motion {
+			0% {
+				background-color: #ff0000;
+			}
+			25% {
+				background-color: #00ff00;
+			}
+			50% {
+				background-color: #0000ff;
+			}
+			75% {
+				background-color: #ffff00;
+			}
+			100% {
+				background-color: #ff00ff;
+			}
+		}
+		.scroll-top {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			white-space: nowrap;
+			overflow: hidden;
+			animation: scroll-left-to-right-top 20s linear infinite;
+			animation-play-state: running;
+		}
+		.scroll-top:hover {
+			animation-play-state: paused;
+		}
+		.scroll-bottom {
+			position: fixed;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			white-space: nowrap;
+			overflow: hidden;
+			animation: scroll-right-to-left-bottom 15s linear infinite;
+			animation-play-state: running;
+		}
+		.scroll-bottom:hover {
+			animation-play-state: paused;
+		}
+		.scroll-top a,
+		.scroll-bottom a {
+			font-size: 36px; /* Adjust font size as desired */
+			text-decoration: none;
+			color: #fff;
+		}
+		.author {
+			position: fixed;
+			bottom: 2in;
+			right: 2in;
+			text-align: right;
+			color: #fff;
+			font-size: 18px;
+		}
+		@keyframes scroll-left-to-right-top {
+			0% {
+				transform: translateX(-100%);
+			}
+			100% {
+				transform: translateX(100%);
+			}
+		}
+		@keyframes scroll-right-to-left-bottom {
+			0% {
+				transform: translateX(100%);
+			}
+			100% {
+				transform: translateX(-100%);
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="scroll-top">
+		<a href="https://www.example.com" target="_blank">https://www.example.com</a>
+	</div>
+	<div class="container">
+		<h1>Hello, we are in development stage</h1>
+		<h3>Thanks for visiting us and your patience. We are working hard to bring you the best experience.</h3>
+		<h3>Please check back later for updates.</h3>
+	</div>
+	<div class="scroll-bottom">
+		<a href="https://www.example.com" target="_blank">https://www.example.com</a>
+	</div>
+	<div class="author">
+		<p>Developer: JODU VENKATA KISHOR</p>
+	</div>
+</body>
+</html>
